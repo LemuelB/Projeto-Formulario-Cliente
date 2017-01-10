@@ -51,7 +51,7 @@ namespace Formulario_Cliente
         private void btn_excluir_Click(object sender, EventArgs e)
         {
             ClienteDAO dao = new ClienteDAO();
-            int valorParaRemover = Convert.ToInt32(btn_excluir.Text);
+            int valorParaRemover = Convert.ToInt32(cbx_remove_id.Text);
             dao.remover(valorParaRemover);
         }
     }
