@@ -16,7 +16,7 @@ namespace Formulario_Cliente.Classes.conexao
             try{
 
                 //string de conexão, para acessar através do ip
-                string url = "Data Source=192.168.0.105,";
+                string url = "Data Source=192.168.0.102,";
                 string porta = "1433;";
                 string libConexaoRede = "Network Library=DBMSSOCN;";
                 string banco = "Initial Catalog=myDataBase;";

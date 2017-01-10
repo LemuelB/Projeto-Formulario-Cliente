@@ -50,5 +50,11 @@ namespace Formulario_Cliente.Classes.cliente
                 telefone = value;
             }
         }
+
+        public override string ToString()
+        {
+            return "Id: "+this.id + " Nome: " + this.nome + " Telefone: " + this.telefone;
+
+        }
     }
 }

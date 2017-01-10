@@ -59,7 +59,43 @@ namespace Formulario_Cliente.Classes.cliente
 
         public override List<Cliente> listar()
         {
-            throw new NotImplementedException();
+            string sql = "SELECT * FROM Cliente";
+            List<Cliente> lista = new List<Cliente>();
+            
+            
+            try
+            {
+                SqlCommand comando = new SqlCommand(sql, connection);
+
+                connection.Open();
+
+                SqlDataReader reader = comando.ExecuteReader();
+                
+                while(reader.Read())
+                {
+                    Cliente cliente = new Cliente();
+
+                    cliente.Id = Convert.ToInt32(reader["id"]);
+                    cliente.Nome = Convert.ToString(reader["nome"]);
+                    cliente.Telefone = Convert.ToString(reader["Telefone"]);
+
+                    lista.Add(cliente);
+                }   
+                    
+                MessageBox.Show("sucesso!!!");
+                return lista;
+
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return null;
         }
 
         public override void remover()

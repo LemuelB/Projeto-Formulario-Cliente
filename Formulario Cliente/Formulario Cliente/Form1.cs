@@ -33,5 +33,23 @@ namespace Formulario_Cliente
             dao.adicionar(cliente);
 
         }
+
+        private void btn_listar_Click(object sender, EventArgs e)
+        {
+            SqlConnection con = new ConnectionFactory().getConnection();
+
+            ClienteDAO dao = new ClienteDAO();
+
+            List<Cliente> cliente = dao.listar();
+
+
+
+            foreach (Cliente Dao in cliente) {
+                list_Box.Items.Add(Dao);
+            }
+
+
+
+        }
     }
 }
