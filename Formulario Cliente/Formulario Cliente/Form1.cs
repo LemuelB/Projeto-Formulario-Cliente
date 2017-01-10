@@ -31,10 +31,9 @@ namespace Formulario_Cliente
 
             ClienteDAO dao = new ClienteDAO();
             dao.adicionar(cliente);
-
         }
 
-        private void btn_listar_Click(object sender, EventArgs e)
+        private void lbtn_listar_Click(object sender, EventArgs e)
         {
             SqlConnection con = new ConnectionFactory().getConnection();
 
@@ -42,14 +41,18 @@ namespace Formulario_Cliente
 
             List<Cliente> cliente = dao.listar();
 
+            foreach (Cliente Dao in cliente)
+            {
+                list_Box_cliente.Items.Add(Dao);
 
-
-            foreach (Cliente Dao in cliente) {
-                list_Box.Items.Add(Dao);
             }
+        }
 
-
-
+        private void btn_excluir_Click(object sender, EventArgs e)
+        {
+            ClienteDAO dao = new ClienteDAO();
+            int valorParaRemover = Convert.ToInt32(btn_excluir.Text);
+            dao.remover(valorParaRemover);
         }
     }
 }

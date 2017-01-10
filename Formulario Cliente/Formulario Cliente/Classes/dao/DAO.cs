@@ -11,7 +11,7 @@ namespace Formulario_Cliente.Classes.dao
   abstract  class  DAO <T>
     {
         abstract public void adicionar(T elemento);
-        abstract public void remover();
+        abstract public void remover(int id);
         abstract public List<T> listar();
         abstract public void alterar();
     }

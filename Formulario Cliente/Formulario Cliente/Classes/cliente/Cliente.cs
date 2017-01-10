@@ -53,7 +53,7 @@ namespace Formulario_Cliente.Classes.cliente
 
         public override string ToString()
         {
-            return "Id: "+this.id + " Nome: " + this.nome + " Telefone: " + this.telefone;
+            return "[ Id: "+this.id + "] [ Nome: " + this.nome + "] [ Telefone: " + this.telefone+" ]";
 
         }
     }

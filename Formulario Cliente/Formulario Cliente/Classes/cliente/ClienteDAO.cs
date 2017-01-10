@@ -83,6 +83,10 @@ namespace Formulario_Cliente.Classes.cliente
                 }   
                     
                 MessageBox.Show("sucesso!!!");
+
+                reader.Close();
+                
+                connection.Close();
                 return lista;
 
             }
@@ -98,9 +102,30 @@ namespace Formulario_Cliente.Classes.cliente
             return null;
         }
 
-        public override void remover()
+        public override void remover(int id)
         {
-            throw new NotImplementedException();
+            string sql = "DELETE FROM Cliente where id = @id ";
+
+            try
+            {
+                SqlCommand comando = new SqlCommand(sql, connection);
+
+                comando.Parameters.Add("@id", SqlDbType.Int).Value = id ;
+
+                connection.Open();
+                comando.ExecuteNonQuery();
+                MessageBox.Show("sucesso!!!");
+
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+
+            }
+            finally
+            {
+                connection.Close();
+            }
         }
     }
 }
