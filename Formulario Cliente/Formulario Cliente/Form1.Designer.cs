@@ -38,12 +38,17 @@
             this.lbtn_listar = new System.Windows.Forms.Button();
             this.list_Box_cliente = new System.Windows.Forms.ListBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.btn_excluir = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.cbx_remove_id = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btn_excluir = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btn_atualizar = new System.Windows.Forms.Button();
+            this.txt_Nome_atualiza = new System.Windows.Forms.TextBox();
+            this.txt_telefone_atualiza = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cbo_atualiza = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -112,7 +117,7 @@
             this.panel2.Controls.Add(this.list_Box_cliente);
             this.panel2.Location = new System.Drawing.Point(376, 12);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(331, 186);
+            this.panel2.Size = new System.Drawing.Size(340, 186);
             this.panel2.TabIndex = 7;
             // 
             // lbtn_listar
@@ -143,55 +148,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(346, 212);
             this.panel3.TabIndex = 9;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.SystemColors.Info;
-            this.panel4.Controls.Add(this.label5);
-            this.panel4.Controls.Add(this.button2);
-            this.panel4.Location = new System.Drawing.Point(376, 217);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(331, 212);
-            this.panel4.TabIndex = 9;
-            // 
-            // btn_excluir
-            // 
-            this.btn_excluir.Location = new System.Drawing.Point(18, 176);
-            this.btn_excluir.Name = "btn_excluir";
-            this.btn_excluir.Size = new System.Drawing.Size(75, 23);
-            this.btn_excluir.TabIndex = 0;
-            this.btn_excluir.Text = "excluir";
-            this.btn_excluir.UseVisualStyleBackColor = true;
-            this.btn_excluir.Click += new System.EventHandler(this.btn_excluir_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(24, 176);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(26, 20);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(269, 20);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Selecioner o id para ser excluido";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(34, 20);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(247, 20);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Selecioner o id para altualizar";
             // 
             // cbx_remove_id
             // 
@@ -243,11 +199,148 @@
             this.cbx_remove_id.Size = new System.Drawing.Size(121, 21);
             this.cbx_remove_id.TabIndex = 2;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(26, 20);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(263, 20);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Selecione o id para ser excluido";
+            // 
+            // btn_excluir
+            // 
+            this.btn_excluir.Location = new System.Drawing.Point(18, 176);
+            this.btn_excluir.Name = "btn_excluir";
+            this.btn_excluir.Size = new System.Drawing.Size(75, 23);
+            this.btn_excluir.TabIndex = 0;
+            this.btn_excluir.Text = "excluir";
+            this.btn_excluir.UseVisualStyleBackColor = true;
+            this.btn_excluir.Click += new System.EventHandler(this.btn_excluir_Click);
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.SystemColors.Info;
+            this.panel4.Controls.Add(this.cbo_atualiza);
+            this.panel4.Controls.Add(this.txt_Nome_atualiza);
+            this.panel4.Controls.Add(this.txt_telefone_atualiza);
+            this.panel4.Controls.Add(this.label4);
+            this.panel4.Controls.Add(this.label6);
+            this.panel4.Controls.Add(this.label5);
+            this.panel4.Controls.Add(this.btn_atualizar);
+            this.panel4.Location = new System.Drawing.Point(376, 217);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(340, 212);
+            this.panel4.TabIndex = 9;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(34, 20);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(237, 20);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Selecione o id para atualizar";
+            // 
+            // btn_atualizar
+            // 
+            this.btn_atualizar.Location = new System.Drawing.Point(24, 176);
+            this.btn_atualizar.Name = "btn_atualizar";
+            this.btn_atualizar.Size = new System.Drawing.Size(75, 23);
+            this.btn_atualizar.TabIndex = 0;
+            this.btn_atualizar.Text = "atualizar";
+            this.btn_atualizar.UseVisualStyleBackColor = true;
+            this.btn_atualizar.Click += new System.EventHandler(this.btn_atualizar_Click);
+            // 
+            // txt_Nome_atualiza
+            // 
+            this.txt_Nome_atualiza.Location = new System.Drawing.Point(108, 100);
+            this.txt_Nome_atualiza.Name = "txt_Nome_atualiza";
+            this.txt_Nome_atualiza.Size = new System.Drawing.Size(220, 20);
+            this.txt_Nome_atualiza.TabIndex = 7;
+            // 
+            // txt_telefone_atualiza
+            // 
+            this.txt_telefone_atualiza.Location = new System.Drawing.Point(108, 139);
+            this.txt_telefone_atualiza.Name = "txt_telefone_atualiza";
+            this.txt_telefone_atualiza.Size = new System.Drawing.Size(220, 20);
+            this.txt_telefone_atualiza.TabIndex = 8;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 100);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Nome";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(12, 139);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(49, 13);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Telefone";
+            // 
+            // cbo_atualiza
+            // 
+            this.cbo_atualiza.FormattingEnabled = true;
+            this.cbo_atualiza.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31",
+            "32",
+            "33",
+            "34",
+            "35",
+            "36",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40"});
+            this.cbo_atualiza.Location = new System.Drawing.Point(38, 58);
+            this.cbo_atualiza.Name = "cbo_atualiza";
+            this.cbo_atualiza.Size = new System.Drawing.Size(121, 21);
+            this.cbo_atualiza.TabIndex = 9;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(719, 450);
+            this.ClientSize = new System.Drawing.Size(728, 450);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -282,6 +375,11 @@
         private System.Windows.Forms.Button btn_excluir;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_atualizar;
+        private System.Windows.Forms.ComboBox cbo_atualiza;
+        private System.Windows.Forms.TextBox txt_Nome_atualiza;
+        private System.Windows.Forms.TextBox txt_telefone_atualiza;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label6;
     }
 }

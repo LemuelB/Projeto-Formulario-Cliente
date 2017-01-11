@@ -13,6 +13,6 @@ namespace Formulario_Cliente.Classes.dao
         abstract public void adicionar(T elemento);
         abstract public void remover(int id);
         abstract public List<T> listar();
-        abstract public void alterar();
+        abstract public void alterar(T elemento, int id);
     }
 }

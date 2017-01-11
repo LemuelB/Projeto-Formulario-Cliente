@@ -52,9 +52,32 @@ namespace Formulario_Cliente.Classes.cliente
         }
 
        
-        public override void alterar()
+        public override void alterar(Cliente cliente, int id)
         {
-            throw new NotImplementedException();
+            string sql = "UPDATE Cliente SET nome = @nome, telefone = @telefone WHERE id = @id ";
+
+            try
+            {
+                SqlCommand comando = new SqlCommand(sql, connection);
+
+                comando.Parameters.Add("@id", SqlDbType.Int).Value = id;
+                comando.Parameters.Add("@nome", SqlDbType.VarChar).Value = cliente.Nome;
+                comando.Parameters.Add("@telefone", SqlDbType.VarChar).Value = cliente.Telefone;
+
+                connection.Open();
+                comando.ExecuteNonQuery();
+                MessageBox.Show("sucesso!!!");
+                
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+
+            }
+            finally
+            {
+                connection.Close();
+            }
         }
 
         public override List<Cliente> listar()

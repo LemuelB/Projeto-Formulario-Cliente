@@ -41,6 +41,8 @@ namespace Formulario_Cliente
 
             List<Cliente> cliente = dao.listar();
 
+            list_Box_cliente.Items.Clear();
+
             foreach (Cliente Dao in cliente)
             {
                 list_Box_cliente.Items.Add(Dao);
@@ -53,6 +55,17 @@ namespace Formulario_Cliente
             ClienteDAO dao = new ClienteDAO();
             int valorParaRemover = Convert.ToInt32(cbx_remove_id.Text);
             dao.remover(valorParaRemover);
+        }
+
+        private void btn_atualizar_Click(object sender, EventArgs e)
+        {
+            Cliente cliente = new Cliente();
+            cliente.Nome = Convert.ToString(txt_Nome_atualiza.Text);
+            cliente.Telefone = Convert.ToString(txt_telefone_atualiza.Text);
+
+            ClienteDAO clienteDao = new ClienteDAO();
+            int id = Convert.ToInt32(cbo_atualiza.Text);
+            clienteDao.alterar(cliente, id);
         }
     }
 }
